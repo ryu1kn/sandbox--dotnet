@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using Bookstore;
 
 namespace BookstoreTests
 {
@@ -8,7 +9,7 @@ namespace BookstoreTests
         [Fact]
         public void TestCase1()
         {
-            Assert.Equal(3, 1 + 2);
+            Assert.Equal("Hello World!", Greeting.MESSAGE);
         }
     }
 }
