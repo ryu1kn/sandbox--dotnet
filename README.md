@@ -4,8 +4,7 @@
 ## Run
 
 ```sh
-cd src/Bookstore
-dotnet run
+docker-compose up --build
 ```
 
 ## Test
