@@ -2,13 +2,14 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app
 
 # Copy csproj and restore as separate layers
+COPY *.sln ./
 COPY src/Bookstore/*.csproj ./src/Bookstore/
 COPY test/BookstoreTests/*.csproj ./test/BookstoreTests/
-RUN cd test/BookstoreTests && dotnet restore
+RUN dotnet restore
 
 COPY src/Bookstore/. ./src/Bookstore/
 COPY test/BookstoreTests/. ./test/BookstoreTests/
-RUN cd test/BookstoreTests && dotnet test
+RUN dotnet test
 
 WORKDIR /app/src/Bookstore
 RUN dotnet publish -c Release -o out

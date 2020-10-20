@@ -10,7 +10,6 @@ docker-compose up --build
 ## Test
 
 ```sh
-cd test/BookstoreTests
 dotnet test
 ```
 
